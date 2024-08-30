@@ -24,10 +24,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const data = UpvoteSchema.parse(await req.json());
-    await prismaClient.upvote.create({
-      data: {
-        userId: user.id,
-        streamId: data.streamId,
+    await prismaClient.upvote.delete({
+      where: {
+        userId_streamId: {
+          userId: user.id,
+          streamId: data.streamId,
+        },
       },
     });
   } catch (error) {
