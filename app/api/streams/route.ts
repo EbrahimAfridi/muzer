@@ -39,11 +39,11 @@ export async function POST(req: NextRequest) {
         title: res.title ?? "Cannot find video.",
         smallImg:
           (thumbnails.length > 1
-            ? thumbnails[thumbnails.length - 2]
-            : thumbnails[thumbnails.length - 1]) ??
+            ? thumbnails[thumbnails.length - 2].url
+            : thumbnails[thumbnails.length - 1].url) ??
           "../../../public/images/cat-4218424_1280.jpg",
         bigImg:
-          thumbnails[thumbnails.length - 1] ??
+          thumbnails[thumbnails.length - 1].url ??
           "../../../public/images/cat-4218424_1280.jpg",
       },
     });
