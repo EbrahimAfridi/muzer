@@ -1,1 +1,2 @@
-export const YOUTUBE_REGEX = new RegExp("^https://www.youtube.com/watch?v=[w-]{11}$");
+export const YOUTUBE_REGEX =
+  /^(?:(?:https?:)?\/\/)?(?:www\.)?(?:m\.)?(?:youtu(?:be)?\.com\/(?:v\/|embed\/|watch(?:\/|\?v=))|youtu\.be\/)((?:\w|-){11})(?:\S+)?$/;
